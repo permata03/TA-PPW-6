@@ -1,0 +1,50 @@
+:root{
+  --bg:#f6f7fb;
+  --card:#ffffff;
+  --text:#111827;
+  --muted:#6b7280;
+  --accent:#0077cc;
+  --danger:#dc3545;
+}
+body.dark{
+  --bg:#0b1120;
+  --card:#0f1724;
+  --text:#e6eef8;
+  --muted:#9aa6bf;
+  --accent:#4ea8ff;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+  background:var(--bg);color:var(--text);min-height:100vh;
+}
+.topbar{
+  display:flex;justify-content:space-between;align-items:center;padding:16px 20px;background:linear-gradient(90deg,#0b84ff22,transparent);
+  border-bottom:1px solid rgba(0,0,0,0.06);
+}
+.topbar h1{margin:0;font-size:1.25rem}
+.controls button{margin-left:8px;padding:8px 10px;border-radius:8px;border:none;background:var(--card);cursor:pointer}
+.container{max-width:1100px;margin:24px auto;padding:0 16px;display:grid;grid-template-columns:1fr 360px;gap:20px}
+@media (max-width:900px){.container{grid-template-columns:1fr}}
+.card{background:var(--card);border-radius:12px;padding:16px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+.search-panel .search-row{display:flex;gap:8px}
+.search-panel input{padding:10px;border-radius:8px;border:1px solid #ddd;flex:1}
+.search-panel button{padding:10px 12px;border-radius:8px;border:none;background:var(--accent);color:white;cursor:pointer}
+.fav-row{margin-top:10px;display:flex;gap:8px;align-items:center}
+#favorites{margin-top:8px;display:flex;gap:8px;flex-wrap:wrap}
+.favorite-pill{padding:6px 8px;background:#eef6ff;border-radius:999px;cursor:pointer}
+.current-weather{display:flex;flex-direction:column}
+.weather-main{display:flex;align-items:center;gap:12px}
+.weather-main img{width:72px;height:72px}
+.left{flex:1}
+.right{display:flex;flex-direction:column;gap:8px;min-width:160px}
+.metric{display:flex;justify-content:space-between;background:rgba(0,0,0,0.03);padding:8px;border-radius:8px}
+.temp{font-size:2.5rem;font-weight:700}
+.muted{color:var(--muted);font-size:0.9rem}
+.forecast-grid{display:flex;gap:10px;overflow:auto;padding:10px 0}
+.forecast-item{min-width:120px;background:rgba(0,0,0,0.03);padding:10px;border-radius:8px;text-align:center}
+.loading{padding:8px;border-radius:8px;background:#fff3cd;color:#856404}
+.hidden{display:none}
+.error{padding:8px;border-radius:8px;background:#ffe6e6;color:var(--danger)}
+.activity{grid-column:1/-1}
+.footer{text-align:center;padding:16px;color:var(--muted)}

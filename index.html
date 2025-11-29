@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PermataWeather — Weather Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>🔮 PermataWeather</h1>
+    <div class="controls">
+      <button id="themeToggle" aria-label="Toggle theme">🌙</button>
+      <button id="unitToggle" aria-label="Toggle unit">°C</button>
+      <button id="refreshBtn" aria-label="Refresh">🔄</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="search-panel">
+      <div class="search-row">
+        <input id="searchInput" list="suggestions" placeholder="Cari kota (mis. Jakarta)" autocomplete="off"/>
+        <datalist id="suggestions"></datalist>
+        <button id="searchBtn">Cari</button>
+      </div>
+      <div class="fav-row">
+        <input id="favName" placeholder="Nama favorit (opsional)"/>
+        <button id="saveFav">Simpan Kota Favorit</button>
+        <div id="favorites"></div>
+      </div>
+    </section>
+
+    <section class="current-weather card">
+      <div id="loadingCurrent" class="loading hidden">⏳ Memuat...</div>
+      <div id="currentContent" class="hidden">
+        <div class="left">
+          <h2 id="locName">-</h2>
+          <div id="timestamp" class="muted"></div>
+          <div class="weather-main">
+            <img id="weatherIcon" alt="icon" />
+            <div>
+              <div id="temp" class="temp">--°</div>
+              <div id="cond" class="muted">--</div>
+            </div>
+          </div>
+        </div>
+        <div class="right">
+          <div class="metric"><strong>Humidity</strong><span id="humidity">--%</span></div>
+          <div class="metric"><strong>Wind</strong><span id="wind">-- m/s</span></div>
+          <div class="metric"><strong>Feels like</strong><span id="feels">--°</span></div>
+        </div>
+      </div>
+      <div id="currentError" class="error hidden"></div>
+    </section>
+
+    <section class="forecast card">
+      <h3>5-Day Forecast</h3>
+      <div id="loadingForecast" class="loading hidden">⏳ Memuat...</div>
+      <div id="forecastList" class="forecast-grid"></div>
+      <div id="forecastError" class="error hidden"></div>
+    </section>
+
+    <section class="activity card">
+      <h3>Aktivitas & Debug</h3>
+      <div id="activityLog"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>PermataWeather — dibuat untuk Tugas Akhir • Data dari OpenWeatherMap</small>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
